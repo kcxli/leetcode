@@ -15,7 +15,7 @@ class Solution:
 '''
      i recognize this solution is not the most time efficient but 
      i thought of it pretty quickly so i guess that counts? 
-     time efficiency is O(n^2), space is O(1)
+     time efficiency is O(n), space is O(1)
      i think if you did some variation of binary search it would be
      faster? oh shoot nevermind the other sols also do the same thing
      they just calculate numbers[l] + numbers[r] a single time instead
