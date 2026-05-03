@@ -20,18 +20,19 @@ class Solution:
         # such that j + k = -i. Achieve this using the two sum ii approach 
 
         for i, num in enumerate(nums):
-            l = i + 1
-            r = len(nums) - 1
-            while (l < r):
-                total = nums[l] + nums[r]
-                if (total == -num):
-                    sol.add((nums[i], nums[l], nums[r]))
-                    l += 1
-                    r -= 1
-                elif (total > -num):
-                    r -= 1
-                else:
-                    l += 1 
+            if (num != nums[i-1] or i == 0): 
+                l = i + 1
+                r = len(nums) - 1
+                while (l < r):
+                    total = nums[l] + nums[r]
+                    if (total == -num):
+                        sol.add((nums[i], nums[l], nums[r]))
+                        l += 1
+                        r -= 1
+                    elif (total > -num):
+                        r -= 1
+                    else:
+                        l += 1 
 
         # remove duplicates
         return list(sol)
