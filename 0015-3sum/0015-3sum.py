@@ -30,9 +30,17 @@ class Solution:
                         l += 1
                         r -= 1
                     elif (total > -num):
-                        r -= 1
+                        if (nums[r] == nums[r-1] and r - 1 > l):
+                            while (nums[r] == nums[r-1] and r - 1 > l):
+                                r -= 1
+                        else:
+                            r -= 1
                     else:
-                        l += 1 
+                        if (nums[l] == nums[l+1] and l + 1 < r):
+                            while (nums[l] == nums[l+1] and l + 1 < r):
+                                l += 1
+                        else:
+                            l += 1
 
         # remove duplicates
         return list(sol)
