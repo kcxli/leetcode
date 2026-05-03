@@ -24,7 +24,7 @@ class Solution:
             elif (token == '/'):
                 x = int(stack.pop())
                 y = int(stack.pop())
-                value = (y//1) / (x//1)
+                value = y / x
                 stack.append(value)
             elif (token == '-'):
                 x = int(stack.pop())
