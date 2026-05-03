@@ -24,7 +24,6 @@ class Solution:
             r = len(nums) - 1
             while (l < r):
                 total = nums[l] + nums[r]
-
                 if (total == -num):
                     sol.append([nums[i], nums[l], nums[r]])
                     l += 1
@@ -35,7 +34,5 @@ class Solution:
                     l += 1 
 
         # remove duplicates
-        for s in sol:
-            s.sort()
         return [list(x) for x in (set(tuple(y) for y in sol))]
 
