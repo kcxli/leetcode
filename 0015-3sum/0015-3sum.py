@@ -28,6 +28,7 @@ class Solution:
                 if (total == -num):
                     sol.append([nums[i], nums[l], nums[r]])
                     l += 1
+                    r -= 1
                 elif (total > -num):
                     r -= 1
                 else:
