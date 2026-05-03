@@ -14,7 +14,7 @@ class Solution:
     def threeSum(self, nums: list[int]) -> list[list[int]]:
         # sort array 
         nums.sort()
-        sol = []
+        sol = set()
 
         # for every int i in array, want to find two corresponding int j and k 
         # such that j + k = -i. Achieve this using the two sum ii approach 
@@ -25,7 +25,7 @@ class Solution:
             while (l < r):
                 total = nums[l] + nums[r]
                 if (total == -num):
-                    sol.append([nums[i], nums[l], nums[r]])
+                    sol.add((nums[i], nums[l], nums[r]))
                     l += 1
                     r -= 1
                 elif (total > -num):
@@ -34,5 +34,5 @@ class Solution:
                     l += 1 
 
         # remove duplicates
-        return [list(x) for x in (set(tuple(y) for y in sol))]
+        return list(sol)
 
